@@ -146,6 +146,12 @@ Where:
 version (NoMain) {} else
 private int tryMain(size_t argc, const(char)** argv, ref Param params)
 {
+    //Experiment:   Checking `argv:const(char)**`.  
+        size_t i;
+        for(i=0;i<argc;i++) {
+            writeln("[%i]: %s".format(i, argv[i]));
+        }
+    
     Strings files;
     Strings libmodules;
     global._init();
